@@ -4,6 +4,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Replace Placeholder Values:
+# Replace 'your_file.csv' with the name or path to your dataset.
+# Update 'your_column_here' in the visualize_data function call with a column name from your dataset for visualization.
+
 # Function to load data
 def load_data(file_path):
     """
