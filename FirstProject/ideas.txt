@@ -1,0 +1,49 @@
+Premises Liability and Public Safety
+Idea: Analyze lawsuits related to slip-and-fall incidents, workplace safety, or building code violations.
+
+######
+Dataset Options:
+Occupational Safety and Health Administration (OSHA): Data on workplace injuries and violations.
+Bureau of Labor Statistics (BLS): Workplace injury data.
+Analysis Ideas:
+Examine correlations between state tort laws and injury rates.
+Predict lawsuit outcomes based on location, type of injury, and legal precedent.
+######
+######
+Mass Torts and Class Action Lawsuits
+Idea: Study large-scale litigation (e.g., opioid crisis lawsuits, tobacco litigation, asbestos cases) and their economic and societal effects.
+
+Dataset Options:
+PACER: Federal case data (requires an account and some fees).
+Law Firms’ Settlement Data: Some large firms release summaries of mass tort settlements.
+Analysis Ideas:
+
+Visualize settlement trends over time by case type.
+Examine factors influencing the size of settlements (e.g., number of plaintiffs, corporate revenues).
+
+Look at mass tort cases. Work backwards to find and visualize settlement
+Circles for size of settlement
+earplugs
+abestos
+tobacco
+
+size of pool
+size of plantiff
+harm? how to quantify
+
+
+#####
+#####
+---Data Sources---
+Gov:
+data.gov: Wide range of public datasets, including legal and economic data.
+https://data.gov/
+BLS: Workplace safety and injury data.
+https://www.bls.gov/
+Census Bureau: Data for demographics and regional analysis.
+https://www.census.gov/
+
+Legal Platforms:
+
+PACER: Access to U.S. federal court case records.
+Harvard Caselaw Access Project: Free legal case records.
