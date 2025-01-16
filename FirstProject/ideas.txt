@@ -31,7 +31,14 @@ size of pool
 size of plantiff
 harm? how to quantify
 
-
+Number of Plaintiffs: Larger groups may lead to higher settlements. Analyze how the number of plaintiffs correlates with the size of the settlement.
+Type of Lawsuit: Explore categories like product liability, environmental harm, consumer fraud, securities fraud, and healthcare. Investigate which types tend to yield larger settlements.
+Defendant Characteristics: Company size, annual revenue, or market capitalization. Repeat offenders vs. one-off cases.
+Legal Representation: Quality or reputation of the law firms involved. Compare outcomes for cases with multiple firms versus solo representation.
+Jurisdiction: Some courts are more plaintiff-friendly, while others favor defendants. Compare outcomes across states or federal circuits.
+Case Duration: Longer cases may indicate complex litigation but could also lead to higher settlements.
+Media Coverage: High-profile cases often lead to larger settlements due to public pressure.
+Settlement Structure: Lump-sum payments vs. structured settlements (e.g., payouts over time).
 #####
 #####
 ---Data Sources---
@@ -46,4 +53,12 @@ https://www.census.gov/
 Legal Platforms:
 
 PACER: Access to U.S. federal court case records.
+
 Harvard Caselaw Access Project: Free legal case records.
+https://case.law/
+
+Stanford Law School Securities Class Action Clearinghouse:
+https://securities.stanford.edu/
+
+Kaggle
+https://kaggle.com/

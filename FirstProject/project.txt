@@ -1,0 +1,13 @@
+Data Collection:
+
+Gather data on at least 20-30 high-profile class action lawsuits.
+For each case, collect:
+    Settlement amount
+    Number of plaintiffs
+    Case type
+    Defendant info (e.g., industry, revenue)
+    Jurisdiction
+    Duration of the case
+    Media coverage (e.g., number of articles, sentiment)
+    Firm & Lawyer info
+
