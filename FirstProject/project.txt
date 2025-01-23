@@ -1,4 +1,4 @@
-Data Collection:
+Data
 
 Gather data on at least 20-30 high-profile class action lawsuits.
 For each case, collect:
@@ -11,3 +11,24 @@ For each case, collect:
     Media coverage (e.g., number of articles, sentiment)
     Firm & Lawyer info
 
+---Data Sources---
+Gov:
+data.gov: Wide range of public datasets, including legal and economic data.
+https://data.gov/
+BLS: Workplace safety and injury data.
+https://www.bls.gov/
+Census Bureau: Data for demographics and regional analysis.
+https://www.census.gov/
+
+Legal Platforms:
+
+PACER: Access to U.S. federal court case records.
+
+Harvard Caselaw Access Project: Free legal case records.
+https://case.law/
+
+Stanford Law School Securities Class Action Clearinghouse:
+https://securities.stanford.edu/
+
+Kaggle
+https://kaggle.com/
