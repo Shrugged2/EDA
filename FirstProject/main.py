@@ -1,6 +1,6 @@
 # Import essential libraries
 import pandas as pd
-import numpy as np
+# import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -11,10 +11,10 @@ import seaborn as sns
 # Function to load data
 def load_data(file_path):
     """
-    Load data from a CSV file.
+    Load data from SPSS file.
     """
     try:
-        data = pd.read_csv(file_path)
+        data = pd.read_csv(/Users/rick/Desktop/EDA Exam)
         print(f"Data loaded successfully with {data.shape[0]} rows and {data.shape[1]} columns.")
         return data
     except Exception as e:
