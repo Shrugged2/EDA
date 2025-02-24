@@ -107,5 +107,27 @@ print("\nTeacher Age Summary:")
 print(age_summary)
 
 
-# Check value labels for AGE_T
-print(meta_tch.value_labels.get("AGE_T", "No value labels found"))
+# AGE_T
+# 1 = "Less than 30 years"
+# 2 = "30 to 39 years"
+# 3 = "40 to 49 years"
+# 4 = "50 years or older"
+# Define the correct age group mapping and apply to summary
+age_mapping = {
+    1: "Less than 30 years",
+    2: "30 to 39 years",
+    3: "40 to 49 years",
+    4: "50 years or older"
+}
+
+# Apply the mapping
+df_tch["AGE_GROUP"] = df_tch["AGE_T"].map(age_mapping)
+# Count occurrences of each age group
+age_distribution = df_tch["AGE_GROUP"].value_counts().sort_index()
+# Print the age distribution table
+print("\nPublic School Teachers' Age Distribution:")
+print(age_distribution)
+
+##### QUESTION 5 #####
+# How many teachers are teaching elementary school, middle school, and high school teachers?
+
