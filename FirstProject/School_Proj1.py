@@ -6,16 +6,16 @@ import sys
 import os
 
 ###### DONT FORGET TO UNCOMMENT WHEN FINISHED #####
-# # Define the log file path
-# log_directory = "/Users/rick/Desktop/EDA Exam/logs/"
-# log_filename = "school_output_log.txt"
-# log_filepath = os.path.join(log_directory, log_filename)
-#
-# # Ensure the directory exists
-# os.makedirs(log_directory, exist_ok=True)
-#
-# # Open log file and redirect print statements
-# log_file = open(log_filepath, "w")
+# Define the log file path
+log_directory = "/Users/rick/Desktop/EDA Exam/logs/"
+log_filename = "school_output_log.txt"
+log_filepath = os.path.join(log_directory, log_filename)
+
+# Ensure the directory exists
+os.makedirs(log_directory, exist_ok=True)
+
+# Open log file and redirect print statements
+log_file = open(log_filepath, "w")
 
 # File paths
 file_path_sch = "/Users/rick/Desktop/EDA Exam/schpub99.sav"
@@ -160,11 +160,52 @@ print(f"\nTotal estimated students eligible for free lunch: {total_eligible_stud
 print(f"Average number of eligible students per school: {avg_eligible_students_per_school:.2f}")
 
 ####### QUESTION 2
-# How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida?p
+# How many elementary schools are there in the state of Texas, in the state of CA, in the state of Florida?
 # doing this here because its hard
 
+# Check unique values for school level
+# print("Unique values for SCHLEVEL (School Level):")
+# print(df_sch["SCHLEVEL"].unique())
+
+# SCHLEVEL
+# 1 = "Elementary"
+# 2 = "Secondary"
+# 3 = "Combined"
+
+# Check unique values for region
+# print("\nUnique values for REGION (Geographic Region):")
+# print(df_sch["REGION"].unique())
+#Unique values for REGION (Geographic Region):
+# ['3' '4' '1' '2']
+
+# REGION
+# 1 = "Northeast: Connecticut, Maine, Massachusetts, New Hampshire, New Jersey, New York,
+# Pennsylvania, Rhode Island, Vermont"
+# 2 = "Midwest: Illinois, Indiana, Iowa, Kansas, Michigan, Minnesota, Missouri, Nebraska, North
+# Dakota, Ohio, South Dakota, Wisconsin"
+# 3 = "South: Alabama, Arkansas, Delaware, District of Columbia, Florida, Georgia, Kentucky,
+# Louisiana, Maryland, Mississippi, North Carolina, Oklahoma, South Carolina, Tennessee, Texas,
+# Virginia, West Virginia"
+# 4 = "West: Alaska, Arizona, California, Colorado, Hawaii, Idaho, Montana, Nevada, New Mexico,
+# Oregon, Utah, Washington, Wyoming"
+
+# Define mapping for SCHLEVEL
+school_level_mapping = {
+    1: "Elementary",
+    2: "Secondary",
+    3: "Combined"
+}
+
+# Apply mapping to make output readable
+df_sch["SCHLEVEL_LABEL"] = df_sch["SCHLEVEL"].map(school_level_mapping)
+
+# Count elementary schools by region
+df_elem_by_region = df_sch[df_sch["SCHLEVEL"] == 1]["REGION"].value_counts().sort_index()
+
+print("\nTotal number of elementary schools by REGION:")
+print(df_elem_by_region)
 
 
 # # Close the log file
 ##### DONT FORGET TO UNCOMMENT WHEN DONE
-# log_file.close()
+log_file.close()
