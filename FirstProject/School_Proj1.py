@@ -11,7 +11,7 @@ log_directory = "/Users/rick/Desktop/EDA Exam/logs/"
 log_filename = "school_output_log.txt"
 log_filepath = os.path.join(log_directory, log_filename)
 
-# Ensure the directory exists
+# directory exists?
 os.makedirs(log_directory, exist_ok=True)
 
 # Open log file and redirect print statements
@@ -228,9 +228,9 @@ common_columns = columns_sch.intersection(columns_dist)
 print("\nCommon columns between school and district datasets:")
 print(common_columns)
 
-    # Display unique values
-    print("\nUnique values in SURVEY:")
-    print(df_dist["SURVEY"].unique())
+    # # Display unique values
+    # print("\nUnique values in SURVEY:")
+    # print(df_dist["SURVEY"].unique())
 
 # I give up. there is no unique identifier.
 
