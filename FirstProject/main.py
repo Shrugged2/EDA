@@ -131,3 +131,82 @@ print(age_distribution)
 ##### QUESTION 5 #####
 # How many teachers are teaching elementary school, middle school, and high school teachers?
 
+# Define column names
+teacher_level_column = "TEALEV"
+teacher_level_simple_column = "TEALEV2"
+
+# Define mappings
+teacher_level_mapping = {
+    1: "Elementary",
+    2: "Middle",
+    3: "Secondary",
+    4: "Other"
+}
+
+teacher_level_simple_mapping = {
+    1: "Elementary",
+    2: "Secondary"
+}
+
+# Apply mappings
+df_tch["TEACHER_LEVEL"] = df_tch[teacher_level_column].map(teacher_level_mapping)
+df_tch["TEACHER_LEVEL_2"] = df_tch[teacher_level_simple_column].map(teacher_level_simple_mapping)
+
+# Count teachers in each category
+teacher_level_distribution = df_tch["TEACHER_LEVEL"].value_counts()
+teacher_level_simple_distribution = df_tch["TEACHER_LEVEL_2"].value_counts()
+
+# Print distributions
+print("\nNumber of Teachers by Level (Detailed):")
+print(teacher_level_distribution)
+
+print("\nNumber of Teachers by Level (Elementary vs. Secondary):")
+print(teacher_level_simple_distribution)
+
+###### QUESTION 6 ######
+
+# What are their general fields of main assignment (ASSIGN)?
+
+# ASSIGN maps to the following
+# 1 = "Prekindergarten, kindergarten, and general elementary"
+# 2 = "Math and science"
+# 3 = "English/language arts"
+# 4 = "Social science"
+# 5 = "Special education"
+# 6 = "Foreign languages"
+# 7 = "Bilingual/ESL education"
+# 8 = "Vocational/technical education"
+# 9 = "All others"4 = "Long-term substitute (i.e., your assignment requires that you fill the role of a regular
+# teacher on a long-term basis, but you are still considered a substitute)"
+# 8 = "Administrator (e.g., principal, assistant principal, director, school head)"
+# 9 = "Library media specialist or librarian"
+# 10 = "Other professional staff (e.g., counselor, curriculum coordinator, social worker)"
+# 11 = "Support staff (e.g., secretary)"
+
+
+assign_mapping = {
+    1: "PreK, Kindergarten, General Elementary",
+    2: "Math & Science",
+    3: "English/Language Arts",
+    4: "Social Science",
+    5: "Special Education",
+    6: "Foreign Languages",
+    7: "Bilingual/ESL Education",
+    8: "Vocational/Technical Education",
+    9: "All Others",
+    10: "Long-term Substitute",
+    11: "Administrator (Principal, Director, etc.)",
+    12: "Library Media Specialist/Librarian",
+    13: "Other Professional Staff (Counselor, Social Worker, etc.)",
+    14: "Support Staff (Secretary, etc.)"
+}
+
+# Apply the mapping
+df_tch["MAIN_ASSIGNMENT"] = df_tch["ASSIGN"].map(assign_mapping)
+
+# Count occurrences of each assignment field
+assignment_distribution = df_tch["MAIN_ASSIGNMENT"].value_counts()
+
+# Print the assignment distribution
+print("\nTeacher Main Assignment Fields:")
+print(assignment_distribution)
