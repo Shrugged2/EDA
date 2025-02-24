@@ -205,6 +205,36 @@ df_elem_by_region = df_sch[df_sch["SCHLEVEL"] == 1]["REGION"].value_counts().sor
 print("\nTotal number of elementary schools by REGION:")
 print(df_elem_by_region)
 
+# this is an impossible  question with our given data
+# going to merge the district data to the school level data if I can
+
+# Define file path for district-level dataset
+file_path_dist = "/Users/rick/Desktop/EDA Exam/distpub99.sav"
+
+# Load the district dataset
+df_dist, meta_dist = pyreadstat.read_sav(file_path_dist)
+
+# Display first few rows
+print("\nDistrict Data (distpub99.sav):")
+print(df_dist.head())
+
+# Get column names from both datasets
+columns_sch = set(df_sch.columns)
+columns_dist = set(df_dist.columns)
+
+# Find common columns
+common_columns = columns_sch.intersection(columns_dist)
+
+print("\nCommon columns between school and district datasets:")
+print(common_columns)
+
+    # Display unique values
+    print("\nUnique values in SURVEY:")
+    print(df_dist["SURVEY"].unique())
+
+# I give up. there is no unique identifier.
+
+
 
 # # Close the log file
 ##### DONT FORGET TO UNCOMMENT WHEN DONE
