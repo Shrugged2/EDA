@@ -3,6 +3,36 @@
 import pandas as pd
 #pyreadstat should be a sufficient package to work with .sav files
 import pyreadstat
+import os
+import sys
+
+# Define the log file path
+log_directory = "/Users/rick/Desktop/EDA Exam/logs/"
+log_filename = "teacher_output_log.txt"
+log_filepath = os.path.join(log_directory, log_filename)
+
+# Ensure the directory exists
+os.makedirs(log_directory, exist_ok=True)
+
+# Open log file and redirect print statements
+log_file = open(log_filepath, "w")
+
+class Logger:
+    def __init__(self, file):
+        self.terminal = sys.stdout  # Keep standard output
+        self.log = file  # Log file
+
+    def write(self, message):
+        self.terminal.write(message)  # Print to console
+        self.log.write(message)  # Write to file
+
+    def flush(self):
+        pass  # Prevent errors when Python tries to flush a closed file
+
+# Redirect print output to both console and file
+sys.stdout = Logger(log_file)
+
+
 
 # File paths
 file_path_sch = "/Users/rick/Desktop/EDA Exam/schpub99.sav"
@@ -210,3 +240,9 @@ assignment_distribution = df_tch["MAIN_ASSIGNMENT"].value_counts()
 # Print the assignment distribution
 print("\nTeacher Main Assignment Fields:")
 print(assignment_distribution)
+
+
+
+
+# Close the log file
+log_file.close()
