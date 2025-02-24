@@ -52,9 +52,23 @@ print("Common columns:", common_columns)
 file_path_tch = "/Users/rick/Desktop/EDA Exam/tchpub99.sav"
 df_tch, meta_tch = pyreadstat.read_sav(file_path_tch)
 
+## QUESTION 1
 # Count the number of teachers by counting rows. should be good enough for our purposes here
 num_teachers = df_tch.shape[0]
 
 print(f"Total number of public school teachers in the dataset: {num_teachers}")
+
+## QUESTION 2
+#Define the gender column based on Stata information
+gender_column = "0356"  # Adjust if necessary
+# Define mapping based on survey codes
+gender_mapping = {1: "Male", 2: "Female"}
+# Apply the mapping
+df_tch[gender_column] = df_tch[gender_column].map(gender_mapping)
+# Count occurrences of each gender
+gender_counts = df_tch[gender_column].value_counts()
+print("Teacher Gender Distribution:")
+print(gender_counts)
+
 
 
