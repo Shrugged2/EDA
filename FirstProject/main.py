@@ -58,17 +58,54 @@ num_teachers = df_tch.shape[0]
 
 print(f"Total number of public school teachers in the dataset: {num_teachers}")
 
-## QUESTION 2
-#Define the gender column based on Stata information
-gender_column = "0356"  # Adjust if necessary
-# Define mapping based on survey codes
+## QUESTION 2, 3, 4
+#Define the gender, and race columns based on file layout information and pdf (https://nces.ed.gov/surveys/sass/pdf/PublicTeacher/tchpub99_layout.pdf)
+
+# Load the dataset
+file_path_tch = "/Users/rick/Desktop/EDA Exam/tchpub99.sav"
+df_tch, meta_tch = pyreadstat.read_sav(file_path_tch)
+
+# Define column names
+gender_column = "T0356"
+race_column = "T0357"
+hispanic_column = "T0359"
+age_column = "AGE_T"
+
+
+# Define mappings
 gender_mapping = {1: "Male", 2: "Female"}
-# Apply the mapping
+race_mapping = {
+    1: "American Indian/Alaska Native",
+    2: "Asian",
+    3: "Black",
+    4: "White"
+}
+hispanic_mapping = {1: "Yes", 2: "No"}
+
+# Apply mappings
 df_tch[gender_column] = df_tch[gender_column].map(gender_mapping)
-# Count occurrences of each gender
+df_tch[race_column] = df_tch[race_column].map(race_mapping)
+df_tch[hispanic_column] = df_tch[hispanic_column].map(hispanic_mapping)
+
+# Count occurrences
 gender_counts = df_tch[gender_column].value_counts()
-print("Teacher Gender Distribution:")
+race_counts = df_tch[race_column].value_counts()
+hispanic_counts = df_tch[hispanic_column].value_counts()
+age_summary = df_tch[age_column].value_counts()
+
+# Display results
+print("\nTeacher Gender Distribution:")
 print(gender_counts)
 
+print("\nTeacher Race Distribution:")
+print(race_counts)
+
+print("\nTeacher Hispanic Identification Distribution:")
+print(hispanic_counts)
+
+print("\nTeacher Age Summary:")
+print(age_summary)
 
 
+# Check value labels for AGE_T
+print(meta_tch.value_labels.get("AGE_T", "No value labels found"))
