@@ -61,7 +61,7 @@ print(df_tch.head())
 
 
 ###### MERGE #####
-# Commenting out a var merge of this data. Im typically reluctant to delete code especially for somehting like
+# Commenting out a var merge of this data. Im reluctant to delete code especially for somehting like
 # class. This is my version of showing my work
 
 # This is going to be for our merge
