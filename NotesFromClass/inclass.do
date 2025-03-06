@@ -51,6 +51,27 @@ xtset, clear
 * Check for time trends in a time series dataset (if applicable)
 tsline y
 
+* Check for autocorrelation in time-series data using Durbin-Watson test
+dwstat
+
+* Generate lagged variables to analyze time dependence
+gen lag_y = L.y
+
+* Difference variables to remove trends in time-series data
+gen diff_y = D.y
+
+* Check stationarity using Augmented Dickey-Fuller test
+dfuller y
+
+* Merge two datasets using a common key
+* Example: merge with another dataset called "demographics.dta"
+merge 1:1 id using demographics.dta
+
+* Append another dataset to the current dataset
+* Example: appending "additional_data.dta"
+append using additional_data.dta
+
+
 *****************************************************
 * Correlation Analysis
 *****************************************************
