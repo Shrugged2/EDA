@@ -109,7 +109,12 @@ estat ic
 
 * T-stats and P-values: Significance of coefficients
 * T-stat = Coefficient / Standard Error
-* P-value < 0.05 is typically considered significant
+* P-value thresholds:
+*   - p < 0.01: Highly significant (***), strong evidence against null hypothesis
+*   - p < 0.05: Significant (**), moderate evidence against null hypothesis
+*   - p < 0.10: Marginally significant (*), weak evidence against null hypothesis
+*   - p >= 0.10: Not significant, insufficient evidence against null hypothesis
+
 
 * Check residuals for normality and heteroscedasticity
 diagreg
