@@ -3,15 +3,24 @@
 * Purpose: Load housing data, analyze structure, run regressions, and interpret results
 *****************************************************
 
-* Set up a log file to record the session (optional but recommended)
+* Set up a log file to record the session
 cap log close
-log using exam_analysis.log, replace
+log using exam_1.txt, replace
 
 *****************************************************
-* Load Data
+* Load Data from Different File Types
 *****************************************************
-* Replace 'housing_data.dta' with the actual dataset file name
+* Load Stata (.dta) file
 use "housing_data.dta", clear
+
+* Load Excel (.xls, .xlsx) file
+import excel "housing_data.xlsx", sheet("Sheet1") firstrow clear
+
+* Load CSV (.csv) file
+import delimited "housing_data.csv", clear
+
+* Load SAS (.sas7bdat) file
+import sasxport "housing_data.sas7bdat", clear
 
 *****************************************************
 * Check dataset structure
