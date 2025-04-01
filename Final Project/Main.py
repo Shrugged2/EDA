@@ -32,6 +32,8 @@ print("Cleaned dataset shape:", df_clean.shape)
 df_sorted = df.sort_values(by='state')
 print(df_sorted.head())
 
+
+
 # ** To Do List
 # Detailed steps:
 ##### 1: load/read original data
@@ -51,11 +53,31 @@ print(df_sorted.head())
 # Y Var = cs_mn_avg_mth_ol
 # Against
 
+# Columns to keep
+cols = ['year', 'stateabb', 'subgroup', 'cs_mn_avg_mth_ol']
 
-# trying to find variables
-recovery_vars = ['unit', 'year', 'subject', 'subgroup',
-                 'growth_1924', 'avg_achv', 'avg_se', 'growth_1924_se',
-                 'frpl', 'ell', 'black', 'white', 'hispanic']
+# Filter and drop missing values
+df_math = df_clean[cols].dropna()
+
+# Optional: Filter to "All Students" only
+df_math = df_math[df_math['subgroup'] == 'All']
+
+# Check years available
+print("Available years:", df_math['year'].unique())
+
+# Preview result
+print(df_math.head())
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.boxplot(data=df_math, x='year', y='cs_mn_avg_mth_ol')
+plt.title("Distribution of Math Scores Over Time (All Students)")
+plt.ylabel("Math Score (cs_mn_avg_mth_ol)")
+plt.xlabel("Year")
+plt.show()
+
+
 
 
 df_recovery = df_clean[recovery_vars]
